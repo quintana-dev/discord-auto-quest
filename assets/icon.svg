@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#190d2e"/>
+      <stop offset="50%" stop-color="#0e0b16"/>
+      <stop offset="100%" stop-color="#07060a"/>
+    </linearGradient>
+
+    <!-- Outer Border Glow -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#9333ea" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Emblem Primary Gradient -->
+    <linearGradient id="emblemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#e879f9"/>
+      <stop offset="70%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+
+    <!-- Secondary Accent Gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="purpleGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <radialGradient id="centerLight" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#9333ea" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#7c3aed" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Base with Rounded Corners -->
+  <rect x="16" y="16" width="480" height="480" rx="108" ry="108" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Center Radial Glow -->
+  <rect x="16" y="16" width="480" height="480" rx="108" ry="108" fill="url(#centerLight)"/>
+
+  <!-- Outer Glowing Border -->
+  <rect x="16" y="16" width="480" height="480" rx="108" ry="108" fill="none" stroke="url(#borderGrad)" stroke-width="6"/>
+
+  <!-- Inner Ambient Circle Grid Pattern -->
+  <circle cx="256" cy="245" r="140" fill="none" stroke="rgba(168, 85, 247, 0.15)" stroke-width="2" stroke-dasharray="8 8"/>
+  <circle cx="256" cy="245" r="180" fill="none" stroke="rgba(168, 85, 247, 0.08)" stroke-width="1.5"/>
+
+  <!-- Main Quintana "Q" + Quest Lightning Emblem -->
+  <g filter="url(#purpleGlow)">
+    <!-- Outer stylized ring of the Q -->
+    <path d="M 256 120 
+             C 185 120, 130 175, 130 245 
+             C 130 315, 185 370, 256 370 
+             C 285 370, 312 360, 333 343 
+             L 375 385 
+             C 382 392, 394 392, 401 385 
+             C 408 378, 408 366, 401 359 
+             L 359 317 
+             C 374 296, 382 271, 382 245 
+             C 382 175, 327 120, 256 120 Z 
+             M 256 168 
+             C 298 168, 332 202, 332 245 
+             C 332 268, 322 288, 306 302 
+             L 282 278 
+             C 276 272, 266 276, 266 285 
+             L 266 321 
+             C 263 322, 259 322, 256 322 
+             C 214 322, 180 288, 180 245 
+             C 180 202, 214 168, 256 168 Z" 
+          fill="url(#emblemGrad)"/>
+
+    <!-- Central Lightning Quest Spark -->
+    <path d="M 264 185 
+             L 228 250 
+             L 258 250 
+             L 242 305 
+             L 288 238 
+             L 256 238 
+             Z" 
+          fill="#ffffff"/>
+  </g>
+
+  <!-- Top Right Sparkle Star -->
+  <g transform="translate(370, 95)">
+    <path d="M 0,-18 L 4,-5 L 17,0 L 4,5 L 0,18 L -4,5 L -17,0 L -4,-5 Z" fill="#c084fc"/>
+    <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+  </g>
+
+  <!-- .DEV Accent Pill Badge at bottom -->
+  <g transform="translate(196, 412)">
+    <rect x="0" y="0" width="120" height="34" rx="17" ry="17" fill="#12111d" stroke="url(#borderGrad)" stroke-width="2"/>
+    <!-- Blue glowing dot -->
+    <circle cx="24" cy="17" r="5" fill="url(#accentGrad)" filter="url(#purpleGlow)"/>
+    <!-- DEV Text -->
+    <text x="44" y="23" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="900" letter-spacing="1.5">DEV</text>
+  </g>
+</svg>

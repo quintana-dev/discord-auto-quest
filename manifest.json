@@ -1,0 +1,33 @@
+{
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "quest-home.js" ],
+      "matches": [ "https://discord.com/*", "https://canary.discord.com/*" ],
+      "run_at": "document_idle"
+   }, {
+      "js": [ "user-agent-override.js" ],
+      "matches": [ "https://discord.com/*", "https://canary.discord.com/*" ],
+      "run_at": "document_start",
+      "world": "MAIN"
+   } ],
+   "declarative_net_request": {
+      "rule_resources": [ {
+         "enabled": true,
+         "id": "ruleset_1",
+         "path": "rules.json"
+      } ]
+   },
+   "description": "AutoQuest - Automatizador de misiones para Discord Web por quintana.dev",
+   "host_permissions": [ "https://*.discord.com/*" ],
+   "icons": {
+      "128": "assets/icon.png",
+      "16": "assets/icon.png",
+      "48": "assets/icon.png"
+   },
+   "manifest_version": 3,
+   "name": "quintana.dev | AutoQuest",
+   "permissions": [ "declarativeNetRequestWithHostAccess", "scripting", "activeTab" ],
+   "version": "1.0.0"
+}
